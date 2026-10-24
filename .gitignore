@@ -1,0 +1,32 @@
+# Môi trường và cache Python/Jupyter
+.venv/
+venv/
+__pycache__/
+*.pyc*
+*.pyo
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Thông tin bí mật và log
+.streamlit/secrets.toml*
+.env*
+*.env
+*.env.*
+!.env.example
+*.log
+
+# Dataset lớn và đầu ra trung gian; giữ nguyên các file cục bộ
+/data/creditcard.csv
+/data/processed/
+/models/candidates/
+
+# File tạm khi dựng biểu đồ và slide
+/.codex-presentation/
+/.chart-data-*/
+~$*.pptx
+~$*.docx
+~$*.xlsx
+
+# File hệ điều hành
+.DS_Store
+Thumbs.db

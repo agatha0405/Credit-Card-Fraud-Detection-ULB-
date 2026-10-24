@@ -1,0 +1,212 @@
+{
+  "selected_candidate_id": "rf_leaf2",
+  "selected_model_path": "models\\candidates\\rf_leaf2.joblib",
+  "selection_rule": "validation AP descending, then F1, Recall, Precision; candidate_id breaks remaining ties",
+  "threshold": 0.5,
+  "input_format": "raw pandas DataFrame; columns in feature_columns order",
+  "feature_columns": [
+    "Time",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "scale_columns_for_logistic_regression": [
+    "Time",
+    "Amount"
+  ],
+  "fit_scope": "training subset only; not refitted on all stage2 train",
+  "validation_size": 0.2,
+  "random_state": 42,
+  "training_rows": 181584,
+  "validation_rows": 45396,
+  "class_counts": {
+    "Train giai đoạn 2": {
+      "0": 226602,
+      "1": 378
+    },
+    "Training": {
+      "0": 181282,
+      "1": 302
+    },
+    "Validation": {
+      "0": 45320,
+      "1": 76
+    }
+  },
+  "scale_pos_weight_from_training": 600.2715231788079,
+  "test_used": false,
+  "source_sha256": {
+    "data\\processed\\X_train_raw.csv": "08336bd2f68078df3ea32795b11cf2964664cf0e3a15368d699267744f6d536b",
+    "data\\processed\\y_train.csv": "3a49b9d7223c270e3e810efc8fc73e5327d5d3d9a2229d31b5448e4620812225"
+  },
+  "split_indices_path": "reports/training_validation_indices.npz",
+  "validation_results_path": "reports/validation_results.csv",
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.2.6",
+    "pandas": "2.3.0",
+    "scikit-learn": "1.7.0",
+    "xgboost": "3.4.1",
+    "joblib": "1.5.1"
+  },
+  "candidates": [
+    {
+      "candidate_id": "lr_c1",
+      "model": "Logistic Regression",
+      "path": "models\\candidates\\lr_c1.joblib",
+      "parameters": {
+        "C": 1.0,
+        "class_weight": "balanced",
+        "max_iter": 1000,
+        "n_jobs": null,
+        "random_state": 42
+      },
+      "metrics": {
+        "Precision": 0.05435651478816946,
+        "Recall": 0.8947368421052632,
+        "F1": 0.10248681235870384,
+        "AP": 0.8136529810484696,
+        "fit_seconds": 1.443696700000146
+      }
+    },
+    {
+      "candidate_id": "rf_leaf1",
+      "model": "Random Forest",
+      "path": "models\\candidates\\rf_leaf1.joblib",
+      "parameters": {
+        "class_weight": "balanced",
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "n_estimators": 100,
+        "n_jobs": -1,
+        "random_state": 42
+      },
+      "metrics": {
+        "Precision": 0.967741935483871,
+        "Recall": 0.7894736842105263,
+        "F1": 0.8695652173913043,
+        "AP": 0.8759102179940212,
+        "fit_seconds": 17.668721699999878
+      }
+    },
+    {
+      "candidate_id": "xgb_depth4",
+      "model": "XGBoost",
+      "path": "models\\candidates\\xgb_depth4.joblib",
+      "parameters": {
+        "eval_metric": "logloss",
+        "learning_rate": 0.05,
+        "max_depth": 4,
+        "n_estimators": 200,
+        "n_jobs": -1,
+        "random_state": 42,
+        "scale_pos_weight": 600.2715231788079
+      },
+      "metrics": {
+        "Precision": 0.48201438848920863,
+        "Recall": 0.881578947368421,
+        "F1": 0.6232558139534884,
+        "AP": 0.8616240787364107,
+        "fit_seconds": 2.3582618999998886
+      }
+    },
+    {
+      "candidate_id": "lr_c01",
+      "model": "Logistic Regression",
+      "path": "models\\candidates\\lr_c01.joblib",
+      "parameters": {
+        "C": 0.1,
+        "class_weight": "balanced",
+        "max_iter": 1000,
+        "n_jobs": null,
+        "random_state": 42
+      },
+      "metrics": {
+        "Precision": 0.0544435548438751,
+        "Recall": 0.8947368421052632,
+        "F1": 0.10264150943396226,
+        "AP": 0.8097112770515944,
+        "fit_seconds": 1.216912500000035
+      }
+    },
+    {
+      "candidate_id": "rf_leaf2",
+      "model": "Random Forest",
+      "path": "models\\candidates\\rf_leaf2.joblib",
+      "parameters": {
+        "class_weight": "balanced",
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "n_estimators": 100,
+        "n_jobs": -1,
+        "random_state": 42
+      },
+      "metrics": {
+        "Precision": 0.9545454545454546,
+        "Recall": 0.8289473684210527,
+        "F1": 0.8873239436619719,
+        "AP": 0.8777811167339684,
+        "fit_seconds": 15.954655199999706
+      }
+    },
+    {
+      "candidate_id": "xgb_depth3",
+      "model": "XGBoost",
+      "path": "models\\candidates\\xgb_depth3.joblib",
+      "parameters": {
+        "eval_metric": "logloss",
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "n_estimators": 200,
+        "n_jobs": -1,
+        "random_state": 42,
+        "scale_pos_weight": 600.2715231788079
+      },
+      "metrics": {
+        "Precision": 0.21794871794871795,
+        "Recall": 0.8947368421052632,
+        "F1": 0.35051546391752575,
+        "AP": 0.7993295853130167,
+        "fit_seconds": 1.7387972000001355
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "candidate_id": "lr_c1",
+      "category": "DeprecationWarning",
+      "message": "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+    },
+    {
+      "candidate_id": "lr_c01",
+      "category": "DeprecationWarning",
+      "message": "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+    }
+  ]
+}
